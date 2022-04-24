@@ -38,8 +38,6 @@ else{
     newnum+=e.target.innerHTML;
 }
 
-console.log("pre",prevnum);
-console.log("new",newnum);
 
 }
 
@@ -135,6 +133,7 @@ res= Number(prevnum)+Number(newnum);
 display.innerHTML=res;
 prevnum=res;
 newnum="";
+oper="";
 
 }
 break;
@@ -143,6 +142,8 @@ case "-":{
     display.innerHTML=res;
     prevnum=res;
     newnum="";
+    oper="";
+
 
 }
 break;
@@ -152,6 +153,7 @@ case "X":
 
     prevnum=res;
     newnum="";
+    oper="";
 
 }
 break;
@@ -161,6 +163,8 @@ res= Number(prevnum)/Number(newnum);
 display.innerHTML=res;
 prevnum=res;
 newnum="";
+oper="";
+
 
 }
 }
