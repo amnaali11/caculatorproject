@@ -21,25 +21,12 @@ break;
                 if (oper == "") {
                     prevnum = display.innerHTML;
                 }
-                else if (oper == "-") {
-                    let num = display.innerHTML.indexOf("-");
+                else {
+                    let num = display.innerHTML.indexOf(oper);
                     newnum = display.innerHTML.slice(num+1);
-                    console.log(prevnum);
-                    console.log(newnum);
+                    
                 } 
-                else if (oper == "+") {
-                    let num = display.innerHTML.indexOf("+");
-                    newnum = display.innerHTML.slice(num+1);
-                }
-              
-                else if (oper == "/") {
-                    let num = display.innerHTML.indexOf("/");
-                    newnum = display.innerHTML.slice(num+1);
-                } else if (oper == "X") {
-                    let num = display.innerHTML.indexOf("X");
-                    newnum = display.innerHTML.slice(num+1);
-                }
-
+                
 
 
             }
