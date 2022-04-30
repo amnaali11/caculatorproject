@@ -16,17 +16,37 @@ setTimeout(() => {
 }, 200);
 }
 break;
-case "Delete":{
-display.innerHTML=display.innerHTML.slice(0,-1);
-prevnum=display.innerHTML;
+ case "Delete":{
+                display.innerHTML = display.innerHTML.slice(0, -1);
+                if (oper == "") {
+                    prevnum = display.innerHTML;
+                }
+                else if (oper == "-") {
+                    let num = display.innerHTML.indexOf("-");
+                    newnum = display.innerHTML.slice(num+1);
+                    console.log(prevnum);
+                    console.log(newnum);
+                } 
+                else if (oper == "+") {
+                    let num = display.innerHTML.indexOf("+");
+                    newnum = display.innerHTML.slice(num+1);
+                }
+              
+                else if (oper == "/") {
+                    let num = display.innerHTML.indexOf("/");
+                    newnum = display.innerHTML.slice(num+1);
+                } else if (oper == "X") {
+                    let num = display.innerHTML.indexOf("X");
+                    newnum = display.innerHTML.slice(num+1);
+                }
 
 
 
-}
-break;
+            }
+                break;
 
 case ".":{
-if(prevnum.includes(".")&&newnum=="")
+if(prevnum.includes(".")&&oper=="")
 return 0;
 else if(newnum.includes("."))
 return 0;
