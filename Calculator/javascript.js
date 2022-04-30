@@ -25,7 +25,9 @@ prevnum=display.innerHTML;
 }
 break;
 case ".":{
-if(prevnum.include(".")||newnum.include("."))
+if(prevnum.include(".")&&newnum=="")
+return 0;
+else if(newnum.includes("."))
 return 0;
 
 }
@@ -66,7 +68,7 @@ switch(oper)
 case "+":{
 res= Number(prevnum)+Number(newnum);
 display.innerHTML=res;
-prevnum=res;
+prevnum=String(res);
 newnum="";
 oper="";
 
@@ -75,7 +77,7 @@ break;
 case "-":{
     res= Number(prevnum)-Number(newnum);
     display.innerHTML=res;
-    prevnum=res;
+    prevnum=String(res);
     newnum="";
     oper="";
 
@@ -85,7 +87,7 @@ case "X":
 {    res= Number(prevnum)*Number(newnum);
     display.innerHTML=res;
 
-    prevnum=res;
+   prevnum=String(res);
     newnum="";
     oper="";
 
@@ -96,7 +98,7 @@ case "/":
 {
 res= Number(prevnum)/Number(newnum);
 display.innerHTML=res;
-prevnum=res;
+prevnum=String(res);
 newnum="";
 oper="";
 
@@ -140,7 +142,7 @@ break;
 case "-":{
     res= Number(prevnum)-Number(newnum);
     display.innerHTML=res;
-    prevnum=res;
+    prevnum=String(res);
     newnum="";
     oper="";
 
@@ -151,7 +153,7 @@ case "X":
 {    res= Number(prevnum)*Number(newnum);
     display.innerHTML=res;
 
-    prevnum=res;
+    prevnum=String(res);
     newnum="";
     oper="";
 
@@ -161,7 +163,7 @@ case "/":
 {
 res= Number(prevnum)/Number(newnum);
 display.innerHTML=res;
-prevnum=res;
+prevnum=String(res);
 newnum="";
 oper="";
 
