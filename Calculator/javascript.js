@@ -25,7 +25,7 @@ prevnum=display.innerHTML;
 }
 break;
 case ".":{
-if(e.target.innerHTML.includes("."))
+if(prevnum.include(".")||newnum.include("."))
 return 0;
 
 }
