@@ -24,13 +24,7 @@ prevnum=display.innerHTML;
 
 }
 break;
-case ".":{
-if(prevnum.includes(".")&&newnum=="")
-return 0;
-else if(newnum.includes("."))
-return 0;
 
-}
 
 
 default:{display.innerHTML+=e.target.innerText;
