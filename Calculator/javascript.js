@@ -63,10 +63,17 @@ else{
 operations.map((o)=>{
 o.addEventListener("click",(e)=>{
     if(oper=="")
-    
-{    oper=e.target.innerHTML;
-}
+ oper=e.target.innerHTML;
+if (oper != "") {
 
+            let index = display.innerHTML.indexOf(oper);
+            if (display.innerHTML.charAt(index + 1) == "-") {
+                if (newnum != "")
+                    newnum = "-" + newnum;
+            
+            }
+
+        }
 display.innerHTML+=e.target.innerHTML;
 if(newnum!=""){
 
@@ -134,7 +141,17 @@ oper="";
 
 
  function equal(){
+  let index = display.innerHTML.indexOf(oper);
 
+    if (index!=-1) {
+
+        if (display.innerHTML.charAt(index + 1) == "-") {
+            if (newnum != "")
+                newnum = "-" + newnum;
+        }
+else if(display.innerHTML.charAt(index+1)=="+"||display.innerHTML.charAt(index+1)=="X"||display.innerHTML.charAt(index+1)=="/"||newnum=="")
+return 0;
+    }
 
 switch(oper)
 {
