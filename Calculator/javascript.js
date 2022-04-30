@@ -133,7 +133,7 @@ switch(oper)
 case "+":{
 res= Number(prevnum)+Number(newnum);
 display.innerHTML=res;
-prevnum=res;
+prevnum=String(res);
 newnum="";
 oper="";
 
