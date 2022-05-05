@@ -1,11 +1,11 @@
-let buttons=Array.from(document.querySelectorAll(".btn"));
-let operations=Array.from(document.querySelectorAll(".o"));
+let buttons=document.querySelectorAll(".btn");
+let operations=document.querySelectorAll(".o");
 let display=document.querySelector(".container");
 let prevnum="";
 let newnum="";
 let oper="";
 let res=0;
-buttons.map(function add(btn){
+buttons.forEach(function add(btn){
 
 
 btn.addEventListener("click",(e)=>{
@@ -60,7 +60,7 @@ else{
 
 
 });
-operations.map((o)=>{
+operations.forEach((o)=>{
 o.addEventListener("click",(e)=>{
     if(oper=="")
  oper=e.target.innerHTML;
