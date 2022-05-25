@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" href="photos/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+
+
+body {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            position: relative;
+            margin-top: 100px;
+        }
+        .container img {
+            display: block;
+            width: 100%;
+        }
+        
+        nav {
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            right: 0;
+            top: 0;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0 5%;
+            height: 100px;
+            background-color:black;
+        }
+        nav .logo {
+            position:fixed;
+            right:0px;
+            width: 200px;
+        height: 100px;
+        background-image: url("photos/logo.jpg");
+        box-sizing: border-box;
+        vertical-align: baseline;
+        box-sizing: border-box;
+            display: flex;
+            color:white;
+        }
+        nav .links {
+            float:left;
+            padding: 0;
+            margin: 0;
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        nav .links li {
+            list-style: none;
+        
+            
+        }
+        
+        nav .links a {
+            display: block;
+            padding: 7px;
+            margin-left: 10px;
+            font-size: 23px;
+            color: #fff;
+            text-decoration: none;
+            font-family:sans-serif;
+            
+        }
+        
+        
+        nav.links a:hover{
+           color:rgba(218, 165, 32, 0.89);
+        
+        }
+        #nav-toggle {
+            position: absolute;
+            top: -50px;
+        }
+        nav .icon-burger {
+            display: none;
+            position: absolute;
+            left: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        nav .icon-burger .line {
+            width: 30px;
+            height: 5px;
+            background-color: #fff;
+            margin: 5px;
+            border-radius: 3px;
+            transition: all .3s ease-in-out;
+        }
+        @media screen and (max-width: 900px) {
+            
+        li a:hover{
+           color:rgba(218, 165, 32, 0.89);
+        background-color: black;
+        }
+            nav {
+                float: none;
+                width: auto;
+                
+            }
+            nav .links {
+                float: none;
+                position: fixed;
+                z-index: 9;
+                left: 0;
+                right: 0;
+                top: 100px;
+                bottom: 100%;
+                width: auto;
+                height: auto;
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: black;
+                overflow: hidden;
+                box-sizing: border-box;
+                transition: all .5s ease-in-out;
+               
+        
+            }
+            
+            nav :checked ~ .links {
+                bottom: 0;
+            }
+            nav .icon-burger {
+                display: block;
+            }
+            nav :checked ~ .icon-burger .line:nth-child(1) {
+                transform: translateY(10px) rotate(225deg);
+            }
+            nav :checked ~ .icon-burger .line:nth-child(3) {
+                transform: translateY(-10px) rotate(-225deg);
+            }
+            nav :checked ~ .icon-burger .line:nth-child(2) {
+                opacity: 0;
+            }
+            
+        }
+         
+       
+       
+       
+        
+        
+        nav ul li button {
+            font-size: 20px;
+            color: white;
+            outline: none;
+            border: none;
+            background: transparent;
+            font-family:sans-serif;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+        nav ul li button:hover {
+            color: rgba(218, 165, 32, 0.89);
+
+        }
+
+        nav ul li a:hover {
+
+            color: rgba(218, 165, 32, 0.89);
+
+        }
+
+        .form-box {
+            width: 420px;
+            height: 700px;
+            position: relative;
+            margin: 2% auto;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            overflow: hidden;
+            border-radius: 5px;
+            flex: content;
+        }
+
+        .button-box {
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+        }
+
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+            font-family:sans-serif;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: #F3C693;
+            border-radius: 30px;
+            transition: .5s;
+        }
+
+        .input-group-login {
+            top: 150px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+
+        .input-group-register {
+            top: 120px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid white;
+            outline: none;
+            background: transparent;
+        }
+
+        .submit-btn {
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: #F3C693;
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+            font-family:sans-serif;
+            font-size: 20px;
+        }
+
+        .check-box {
+            margin: 30px 10px 34px 0;
+        }
+
+        span.f {
+            color: rgba(218, 165, 32, 0.89);
+            font-family:sans-serif;
+            font-weight: bold;
+
+            font-size: 17px;
+            bottom: 68px;
+            position: absolute;
+        }
+
+        #login {
+            left: 50px;
+        }
+
+        #login input {
+            color: white;
+            font-size: 15;
+        }
+
+        #register {
+            left: 450px;
+        }
+
+        #register input {
+            color: white;
+            font-size: 15;
+        }
+
+
+
+        div#img {
+
+            width: 100%;
+            height: 100%;
+            background-image: url("photos/back2.jpg");
+            background-size: cover;
+        }
+
+
+        body {
+            background-image: url("photos/back3.jpg");
+            background-size: cover;
+        }
+
+        span.type {
+            font-family:sans-serif;
+            color: rgb(240, 177, 18);
+            font-size: 20px;
+
+
+        }
+
+        span.textpass,
+        span.textemail,
+        #textphone {
+
+            font-family:sans-serif;
+            font-size: 20px;
+
+        }
+
+        span#textpass1,
+        span#textemail1,span#textpass,
+        span#textemail{
+
+            font-family: sans-serif;
+            font-size: 20px;
+
+        }
+  div.space{
+height: 100px;
+
+
+  }
+  
+  #eye,#eye1{
+    position:absolute;
+    margin-top: 17px;
+    margin-left: -30px;;
+
+  }
+  #eyea,#eyea1{
+
+    position:absolute;
+    margin-top: 17px;
+    margin-left: -30px;;
+
+    display: none;
+
+
+  }
+  .input-field{
+font-family:sans-serif;
+font-size: 17px;
+
+
+
+
+  }
+  
+  </style>
+
+
+</head>
+
+<body>
+
+    <span id="bar"><i class="fas fa-bars"></i></span>
+
+
+
+
+
+
+
+
+<nav>
+	<input id="nav-toggle" type="checkbox">
+	<div class="logo">
+		
+	</div>
+	<ul class="links">
+	
+                <li>
+                    <a href="index.html">Home</a>
+
+                </li>
+
+                <li>
+                    <a href="neworder.html">Menu</a>
+                </li>
+                
+                <li>
+                    <a href="menu.html">Order</a>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+
+                <li><a href="home.html">Log in</a></li>
+        
+            </ul>
+	<label for="nav-toggle" class="icon-burger">
+		<div class="line"></div>
+		<div class="line"></div>
+		<div class="line"></div>
+	</label>
+</nav>
+
+    <div class="space"></div>
+    <div id="img">
+        <div id='login-form' class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                    <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+                </div>
+                <form id='register' class='input-group-register' action="index.html" method="get">
+
+
+                    <input type='text' class='input-field' placeholder='First Name' id="fname" required>
+                    <input type='text' class='input-field' placeholder='Last Name ' id="lname" required>
+
+                    <label class="chekemail">
+                        <input type='email' class='input-field' placeholder='Email' id="email" required>
+                        <span class="textemail"></span>
+                        <br><br>
+                    </label>
+                    <input type='text' class='input-field' placeholder='Address' required>
+
+                    <input type='tel' class='input-field' placeholder='Enter Phone' id="phone" required>
+                    </br>
+                    <div id="textphone"></div>
+                    <br>
+
+                    <label class="checkpassword">
+                        <input type='password' class='input-field' placeholder='Enter Password' id="pass" required     >
+                        <i class="fa fa-eye-slash"aria-hidden="true"id="eye"onclick="show()"></i>
+                        <i class="fa fa-eye"aria-hidden="true"id="eyea"onclick="show()"></i>
+
+                        <br><br>
+                        <span id="textpass"></span>
+                        <br><br>
+                    </label>
+                    <input type="radio" name="type"><span class="type">male</span>
+                    <br>
+                    <input type="radio" name="type"><span class="type">female</span>
+                    <br><br>
+
+                    <button type='submit' class='submit-btn'>Register</button>
+                    <br><br>
+                </form>
+                <form id='login' class='input-group-login' action="index.html">
+                    <input type='text' class='input-field' placeholder='Email' id="email1" required>
+                    <span class="textemail1"></span>
+                    <input type='password' class='input-field' placeholder='Enter Password' id="pass1" required>
+                    <i class="fa fa-eye-slash"aria-hidden="true"id="eye1"onclick="show1()"></i>
+                    <i class="fa fa-eye"aria-hidden="true"id="eyea1"onclick="show1()"></i>
+
+                  <br><br>
+                    <span id="textpass1"></span><br><br>
+                    <input type='checkbox' class='check-box'><span class="type">Remember Password</span>
+                    <button type='submit' class='submit-btn'>Log in</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script defer>
+
+
+
+
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        var z = document.getElementById('btn');
+        function register() {
+            x.style.left = '-400px';
+            y.style.left = '50px';
+            z.style.left = '110px';
+
+        }
+        function login() {
+            x.style.left = '50px';
+            y.style.left = '450px';
+            z.style.left = '0px';
+        }
+        const email = document.getElementById("email");
+        email.addEventListener('input', () => {
+            const emailText = document.querySelector('.textemail');
+            const emailPattern = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+
+            if (email.value.match(emailPattern)) {
+
+                emailText.innerHTML = "Your Email Address is Valid";
+                emailText.style.color = "green"
+            } else {
+
+                emailText.innerHTML = "Must be a valid email address.";
+                emailText.style.color = "red";
+
+            }
+        });
+        const email1 = document.getElementById("email1");
+        email1.addEventListener('input', () => {
+            const emailText1 = document.querySelector('.textemail1');
+            const emailPattern1 = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+            if (email1.value.match(emailPattern1)) {
+
+                emailText1.innerHTML = "Your Email Address is Valid";
+                emailText1.style.color = "green"
+            } else {
+
+                emailText1.innerHTML = "Must be a valid email address.";
+                emailText1.style.color = "red";
+
+            }
+        });
+
+
+
+        const phone = document.getElementById("phone");
+        phone.addEventListener('input', () => {
+            const textphone = document.querySelector('#textphone');
+
+            if (phone.value.length == 11 && isFinite(phone.value)) {
+
+                textphone.innerHTML = "Your phone number is valid";
+                textphone.style.color = "green";
+
+
+            }
+            else {
+
+
+
+
+
+                textphone.innerHTML = "your  phone number is not valid";
+                textphone.style.color = "red";
+
+
+
+            }
+
+        });
+        const password1 = document.getElementById("pass1");
+        const textpass1 = document.getElementById("textpass1");
+        password1.addEventListener('input', () => {
+         
+            let cont1 = 0;
+            let spcial1 = 0;
+            let space1=0;
+            let arr = password1.value;
+
+            for (let i = 0; i < arr.length; i++) {
+
+                if (isFinite(arr[i]))
+                    cont1++;
+
+                if (arr[i] == "-" || arr[i] == "_" || arr[i] == "*" || arr[i] == "&" || arr[i] == "#")
+
+                    spcial1++;
+
+                if(arr[i]==" ")
+                space1++;
+                       }
+            if (cont1>=1&&arr[0] === arr[0].toUpperCase()&&spcial1==1 &&arr.length == 8&&space1==0) {
+                textpass1.innerHTML = "your password number is valid";
+                textpass1.style.color = "green";
+
+            }
+
+
+            else {
+              
+                textpass1.innerHTML = "your password is not valid";
+                textpass1.style.color = "red";
+
+
+            }
+        })
+        const password = document.getElementById("pass");
+        const textpass = document.getElementById("textpass");
+        password.addEventListener('input', () => {
+           
+            let cont = 0;
+            let special = 0;
+            let space = 0;
+            let arr = password.value;
+           
+
+            for (let i = 0; i < arr.length; i++) {
+            if (isFinite(arr[i]))
+             cont++;
+             if (arr[i] == "-" || arr[i] == "_" || arr[i] == "*" || arr[i] == "&" || arr[i] == "#" || arr[i] == "@")
+             special++;
+            if (arr[i] == " ")
+             space++;
+            }
+ if (special==1&&arr[0]===arr[0].toUpperCase()&&cont>=1&&arr.length==8&&space==0) {
+
+                textpass.innerHTML = "your password is valid";
+                textpass.style.color = "green";
+            }
+            else {
+                textpass.innerHTML = "your password is not valid";
+                textpass.style.color = "red";
+            }
+        });
+
+function show(){
+let eye=document.getElementById("eye");
+let input=document.getElementById("pass");
+let eyea=document.getElementById("eyea");
+
+if(input.type==="password")
+{input.type="text";
+
+eye.style.display="none";
+eyea.style.display="inline";
+
+
+
+}
+else
+{input.type="password";
+
+eyea.style.display="none";
+eye.style.display="inline";
+
+
+
+}
+
+}
+
+
+function show1(){
+let eye1=document.getElementById("eye1");
+let input=document.getElementById("pass1");
+let eyea1=document.getElementById("eyea1");
+
+if(input.type==="password")
+{input.type="text";
+
+eye1.style.display="none";
+eyea1.style.display="inline";
+
+
+
+}
+else
+{input.type="password";
+
+eyea1.style.display="none";
+eye1.style.display="inline";
+
+
+
+}
+
+}
+
+
+    </script>
+
+
+
+</body>
+
+</html>
